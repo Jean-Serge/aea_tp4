@@ -16,5 +16,15 @@ public class Sommet {
 	public Sommet(int id) {
 		this.id = id;
 	}
+	
+	/**
+	 * Cette fonction n'est pas vraiment surchargée car elle permet
+	 * de vérifier s'il s'agit bien du bon sommet dans le bon graphe.
+	 * @param autreSommet
+	 * @return
+	 */
+	public boolean equals(Sommet autreSommet){
+		return super.equals(autreSommet);
+	}
 
 }
