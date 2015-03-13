@@ -1,7 +1,5 @@
 package entite;
 
-import java.util.Random;
-
 import utils.MyRandom;
 
 /**
