@@ -2,6 +2,8 @@ package entite;
 
 import java.util.Random;
 
+import utils.MyRandom;
+
 /**
  * Classe permettant de générer un Graphe aélatoire pour un nombre
  * de sommets et d'arêtes fixés.
@@ -52,14 +54,13 @@ public class GrapheAleatoire {
 			this.sommets[i] = new Sommet(i);
 		}
 		
-		Random rand = new Random();
+		MyRandom rand = new MyRandom();
 		int cptAretesCrees	 = 0;
 		Arete areteACreer;
 		int debut, fin;
 		while(cptAretesCrees < this.nAretes){
-			debut = rand.nextInt() % this.nSommets;
-			fin = rand.nextInt() % this.nSommets;
-			
+			debut = rand.nextPositive() % this.nSommets;
+			fin = rand.nextPositive() % this.nSommets;
 			// Pas d'arête d'un sommet vers lui-même
 			if(debut == fin)
 				continue;
@@ -88,7 +89,7 @@ public class GrapheAleatoire {
 		retour += "Nombre d'arêtes : " + this.nAretes + "\n";
 		retour += "Nombre de sommets : " + this.nSommets + "\n";
 		
-		retour += "Liste des arêtes : \n";
+		retour += "\nListe des arêtes : \n";
 		
 		for(Arete a : this.aretes)
 			retour += a + "\n";
