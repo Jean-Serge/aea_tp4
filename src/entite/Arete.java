@@ -13,6 +13,10 @@ public class Arete {
 	private Sommet origine;
 	private Sommet arrivee;
 
+	// 	========================================================================================= 
+	//	Constructeurs
+	// 	=========================================
+	
 	/**
 	 * 
 	 * @param origine
@@ -23,11 +27,26 @@ public class Arete {
 		this.arrivee = arrivee;
 	}
 
+	// 	========================================================================================= 
+	//	Fonctions utiles
+	// 	=========================================
+	
+	/**
+	 * Compare 2 Arete pour savoir si elles sont identique.
+	 * i.e : si elles ont le même sommet d'origine et d'arrivée.
+	 * 
+	 * @param autreArete l'arête à comparer à l'Arête courante
+	 * @return true si les 2 Arêtes sont égales
+	 */
 	public boolean equals(Arete autreArete) {
 		return this.origine.equals(autreArete.getOrigine())
 				&& this.arrivee.equals(autreArete.getArrivee());
 	}
 
+	// 	========================================================================================= 
+	//	Accesseurs
+	// 	=========================================
+	
 	public Sommet getOrigine() {
 		return origine;
 	}
