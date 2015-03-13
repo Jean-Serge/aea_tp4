@@ -34,5 +34,9 @@ public class Sommet {
 	public boolean equals(Sommet autreSommet){
 		return super.equals(autreSommet);
 	}
+	
+	public String toString(){
+		return "" + this.id;
+	}
 
 }

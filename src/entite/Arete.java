@@ -55,4 +55,9 @@ public class Arete {
 		return arrivee;
 	}
 
+	public String toString(){
+		String retour = "";
+		retour += this.origine + "  ====>  " + this.arrivee;
+		return retour;
+	}
 }
