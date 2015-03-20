@@ -10,10 +10,8 @@ import utils.MyRandom;
  * @author Thibaud Verbaere
  *
  */
-public class GrapheAleatoire {
+public class GrapheAleatoire extends AbstractGraphe{
 	
-	private Sommet[] sommets;
-	private Arete[] aretes;
 	private int nSommets;
 	private int nAretes;
 	
@@ -31,8 +29,6 @@ public class GrapheAleatoire {
 		super();
 		this.nSommets = nSommets;
 		this.nAretes = nAretes;
-		this.sommets = new Sommet[nSommets];
-		this.aretes = new Arete[nAretes];
 		
 		this.generereGrapheAleatoire();
 	}
@@ -49,9 +45,9 @@ public class GrapheAleatoire {
 	private void generereGrapheAleatoire(){
 		// Génération des sommets
 		for(int i = 0 ; i < this.nSommets ; i++){
-			this.sommets[i] = new Sommet(i);
+			this.sommets.add(new Sommet(i));
 		}
-		
+	
 		MyRandom rand = new MyRandom();
 		int cptAretesCrees	 = 0;
 		Arete areteACreer;
@@ -63,36 +59,21 @@ public class GrapheAleatoire {
 			if(debut == fin)
 				continue;
 			
-			areteACreer = new Arete(this.sommets[debut], this.sommets[fin]);
+			areteACreer = new Arete(this.sommets.get(debut), this.sommets.get(fin));
 			for(int i = 0 ; i < cptAretesCrees ; i++){
 				// On vérifie que l'arête en question n'existe pas déjà
-				if(this.aretes[i].equals(areteACreer)){
+				if(this.aretes.get(i).equals(areteACreer)){
 					continue;
 				}
 			}
 			
 			// Si tout se passe bien on ajoute cet Arête
-			this.aretes[cptAretesCrees++] = areteACreer;
+			
+			this.aretes.add(areteACreer);
+			cptAretesCrees++;
 		}
 		
 	}
 	
-	// 	========================================================================================= 
-	//	Accesseurs
-	// 	=========================================
-	
-	public String toString(){
-		String retour = "";
-		
-		retour += "Nombre d'arêtes : " + this.nAretes + "\n";
-		retour += "Nombre de sommets : " + this.nSommets + "\n";
-		
-		retour += "\nListe des arêtes : \n";
-		
-		for(Arete a : this.aretes)
-			retour += a + "\n";
 
-		return retour;
-	}
-	
 }
