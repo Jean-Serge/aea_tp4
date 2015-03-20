@@ -30,7 +30,10 @@ Implémentation d'une classe Graphe permettant de manipuler un graphe.
 
 Création des classes suivantes :
 + AbstractGraphe 	: réprésentation abstraite d'un Graphe générique
++ Graphe		: répresente un Graphe dont on peut modifier les sommets et les arcs
 
+
+Ajout de la notion de valeur pour une Arete.
 
 TODO :
 ======
@@ -39,4 +42,4 @@ TODO :
 + Implémentation algorithme de Kruskal
 + Test classe Graphe 
 + Test algo de Prim
-+ Test algo re Kruskal
++ Test algo de Kruskal
