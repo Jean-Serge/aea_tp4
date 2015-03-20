@@ -53,8 +53,11 @@ public class Arete {
 	 * @return true si les 2 Arêtes sont égales
 	 */
 	public boolean equals(Arete autreArete) {
-		return this.origine.equals(autreArete.getOrigine())
+		boolean endroit = this.origine.equals(autreArete.getOrigine())
 				&& this.arrivee.equals(autreArete.getArrivee());
+		boolean envers = this.origine.equals(autreArete.getArrivee())
+				&& this.arrivee.equals(autreArete.getOrigine());
+		return endroit || envers;
 	}
 
 	// 	========================================================================================= 
