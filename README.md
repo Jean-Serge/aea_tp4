@@ -14,7 +14,7 @@ Implémentation d'une classe GrapheAleatoire permettant de générer un
 graphe aléatoire connaissant le nombre de sommet et d'arêtes de celui-ci.
 
 Création des classes suivantes :
-+ GrapheAleatoire.java 	: représente un graphe
++ GrapheAleatoire	: représente un graphe
 + Sommet 		: un sommet du graphe (identifié par un numéro)
 + Arete 		: une arête entre 2 sommets du graphe (identifié par 2 sommets d'un graphe)
 
@@ -22,3 +22,21 @@ Création des classes suivantes :
 
 Écriture d'une classe héritant de Random (et ses tests) afin de pouvoir produire
 des entiers strictement positifs ou nulls.
+
+
+Étape 2 :
+=========
+Implémentation d'une classe Graphe permettant de manipuler un graphe.
+
+Création des classes suivantes :
++ AbstractGraphe 	: réprésentation abstraite d'un Graphe générique
+
+
+TODO :
+======
++ Implémentation classe Graphe
++ Implémentation algorithme de Prim
++ Implémentation algorithme de Kruskal
++ Test classe Graphe 
++ Test algo de Prim
++ Test algo re Kruskal
