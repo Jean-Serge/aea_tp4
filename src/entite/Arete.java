@@ -12,19 +12,33 @@ public class Arete {
 
 	private Sommet origine;
 	private Sommet arrivee;
+	private int valeur;
 
 	// 	========================================================================================= 
 	//	Constructeurs
 	// 	=========================================
 	
 	/**
+	 * Créé une nouvelle arète de valeur 1.
 	 * 
-	 * @param origine
-	 * @param arrivee
+	 * @param origine le sommet d'origine de l'arete
+	 * @param arrivee le sommet d'arrivee de l'arete
 	 */
-	public Arete(Sommet origine, Sommet arrivee) {
+	public Arete(Sommet origine, Sommet arrivee){
+		this(origine, arrivee, 1);
+	}
+	
+	/**
+	 * Créé une nouvelle arète de valeur indiquée.
+	 * 
+	 * @param origine le sommet d'origine de l'arete
+	 * @param arrivee le sommet d'arrivee de l'arete
+	 * @param valeur la valeur de l'arete
+	 */
+	public Arete(Sommet origine, Sommet arrivee, int valeur) {
 		this.origine = origine;
 		this.arrivee = arrivee;
+		this.valeur = valeur;
 	}
 
 	// 	========================================================================================= 
@@ -59,5 +73,9 @@ public class Arete {
 		String retour = "";
 		retour += this.origine + "  ====>  " + this.arrivee;
 		return retour;
+	}
+	
+	public int getValeur(){
+		return this.valeur;
 	}
 }
