@@ -47,5 +47,20 @@ public abstract class AbstractGraphe {
 		return retour;
 	}
 	
+	public void ajoutSommet(Sommet s){
+		this.sommets.add(s);
+	}
+	
+	public List<Arete> getAretes(){
+		return this.aretes;
+	}
+	
+	public List<Sommet> getSommets(){
+		return this.sommets;
+	}
+	
+	public void ajoutArete(Arete a){
+		this.aretes.add(a);
+	}
 	
 }
