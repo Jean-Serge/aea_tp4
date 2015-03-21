@@ -39,7 +39,8 @@ TODO :
 ======
 + Implémentation classe Graphe
 + Implémentation algorithme de Prim
-+ Implémentation algorithme de Kruskal
 + Test classe Graphe 
 + Test algo de Prim
-+ Test algo de Kruskal
++ Ecriture dans le README d'une partie parlant l'implémentation de Kruskal [lundi :D]
++ Faire l'exo 1 du TP
++ Faire l'exo 2 du TP
