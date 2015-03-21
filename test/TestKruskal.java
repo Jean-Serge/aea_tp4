@@ -7,29 +7,41 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import algo.Kruskal;
-
+import recherche.Kruskal;
 import entite.Arete;
 import entite.Graphe;
 import entite.Sommet;
 
 public class TestKruskal {
+	
+	Kruskal k;
+	Graphe g = new Graphe();
+	
+	Sommet s0 = new Sommet(0);
+	Sommet s1 = new Sommet(1);
+	Sommet s2 = new Sommet(2);
+	Sommet s3 = new Sommet(3);
+	Sommet s4 = new Sommet(4);
+	Sommet s5 = new Sommet(5);
+	Sommet s6 = new Sommet(6);
+	Sommet s7 = new Sommet(7);
+	Sommet s8 = new Sommet(8);
+	
+	Arete a1 = new Arete(s0,s1,1);
+	Arete a2 = new Arete(s0,s2,7);
+	Arete a3 = new Arete(s1,s2,3);
+	Arete a4 = new Arete(s2,s3,4);
+	Arete a5 = new Arete(s1,s8,4);
+	Arete a6 = new Arete(s3,s4,5);
+	Arete a7 = new Arete(s4,s5,2);
+	Arete a8 = new Arete(s4,s7,7);
+	Arete a9 = new Arete(s5,s7,8);
+	Arete a10 = new Arete(s5,s6,3);
+	Arete a11 = new Arete(s6,s8,6);
+	Arete a12 = new Arete(s7,s8,9);
 
-	
-	@Test
-	public void test_estCyclique() {
-	
-		Graphe g = new Graphe();
-		
-		Sommet s0 = new Sommet(0);
-		Sommet s1 = new Sommet(1);
-		Sommet s2 = new Sommet(2);
-		Sommet s3 = new Sommet(3);
-		Sommet s4 = new Sommet(4);
-		Sommet s5 = new Sommet(5);
-		Sommet s6 = new Sommet(6);
-		Sommet s7 = new Sommet(7);
-		Sommet s8 = new Sommet(8);
+	@Before
+	public void setUp() {
 		
 		g.ajoutSommet(s0);
 		g.ajoutSommet(s1);
@@ -40,19 +52,6 @@ public class TestKruskal {
 		g.ajoutSommet(s6);
 		g.ajoutSommet(s7);
 		g.ajoutSommet(s8);
-		
-		Arete a1 = new Arete(s0,s1,1);
-		Arete a2 = new Arete(s0,s2,7);
-		Arete a3 = new Arete(s1,s2,3);
-		Arete a4 = new Arete(s2,s3,4);
-		Arete a5 = new Arete(s1,s8,4);
-		Arete a6 = new Arete(s3,s4,5);
-		Arete a7 = new Arete(s4,s5,2);
-		Arete a8 = new Arete(s4,s7,7);
-		Arete a9 = new Arete(s5,s7,8);
-		Arete a10 = new Arete(s5,s6,3);
-		Arete a11 = new Arete(s6,s8,6);
-		Arete a12 = new Arete(s7,s8,9);
 		
 		g.ajoutArete(a1);
 		g.ajoutArete(a2);
@@ -67,24 +66,48 @@ public class TestKruskal {
 		g.ajoutArete(a11);
 		g.ajoutArete(a12);
 		
-		Kruskal k = new Kruskal(g);
-		
+		k = new Kruskal(g);
+	}
+	
+	@Test
+	public void test_estCyclique() {
+			
 		List<Arete> ensemble = new ArrayList<Arete>();
 		
 		ensemble.add(a1);
 		
-		assertTrue(k.estcycliqueAvec(a2, ensemble));
+		assertFalse(k.estcycliqueAvec(a2, ensemble));
 		
-		ensemble.add(a2);
+		ensemble.add(a5);
 		
-		assertTrue(k.estcycliqueAvec(a3, ensemble));
+		assertFalse(k.estcycliqueAvec(a11, ensemble));
+		
+		ensemble.add(a4);
+		
+		assertFalse(k.estcycliqueAvec(a3, ensemble));
 		
 		ensemble.add(a3);
 		
-		assertTrue(k.estcycliqueAvec(a4, ensemble));
+		assertTrue(k.estcycliqueAvec(a2, ensemble));
+	}
+	
+	@Test
+	public void test_enGraphe() {
 		
-		ensemble.remove(a1);
+		Graphe nouv = k.enGraphe(g.getAretes());
 		
-		assertFalse(k.estcycliqueAvec(a4, ensemble));
+		assertEquals(g.getSommets().size(),nouv.getSommets().size());
+		assertEquals(g.getAretes().size(),nouv.getAretes().size());
+		
+	}
+	
+	@Test
+	public void test_Kruskal() {
+		
+		assertEquals(59,g.SommePoids());
+		
+		Graphe result = k.executeKruskal();
+		
+		assertEquals(29,result.SommePoids());
 	}
 }
