@@ -63,4 +63,14 @@ public abstract class AbstractGraphe {
 		this.aretes.add(a);
 	}
 	
+	public int SommePoids() {
+		int res = 0;
+		
+		for (Arete a : this.aretes)
+			res += a.getValeur();
+		
+		return res;
+			
+	}
+	
 }
