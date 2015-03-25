@@ -39,12 +39,16 @@ Ajout de la notion de valeur pour une Arete.
 Implémentation des algorithmes :
 ================================
 
-+ Algorithme de Kruskal
++ Algorithme de Kruskal :
+
 On démarre l'algorithme en créant un ensemble vide qui contiendra par la suite des arêtes.
 On tri ensuite par ordre croissant les arêtes du graphe. Les arêtes étant contenues dans une liste d'arêtes les_arêtes nous avons donc implémenté une classe AreteComparator afin de faire simplement un "Collection.sort".
 Une fois ces deux listes initialisées on peux dérouler un algorithme plutôt simple :
+
 1) On prend l'arête de plus petit poids de la liste les_arêtes (la liste étant triée, il faut prendre l'arête d'indice 0).
+
 2) Si l'union de l'ensemble des arêtes contenues dans l'ensemble créé au départ et de l'arête prise à l'étape 1 forme un graphe cyclique (il ne faut donc pas trouver des chemins partant d'un sommet A qui menerait à ce même sommet A), alors on enlève l'arête de les_arêtes. Dans le cas contraire il faut ajouter l'arête à l'ensemble avant de la supprimer de les_arêtes.
+
 3) Si les_arêtes est vide alors on retourne un nouveau graphe composé des arêtes stockées dans l'ensemble sinon on revient à l'étape 1.
 
 TODO :
