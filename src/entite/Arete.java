@@ -10,6 +10,9 @@ package entite;
  */
 public class Arete {
 
+	// Poids Maximal d'une Arète
+	public static final int MAX_VALUE = 101;
+	
 	private Sommet origine;
 	private Sommet arrivee;
 	private int valeur;
@@ -74,7 +77,7 @@ public class Arete {
 
 	public String toString(){
 		String retour = "";
-		retour += this.origine + "  ====>  " + this.arrivee;
+		retour += this.origine + "\t  ====>  \t" + this.arrivee + " \t" + this.valeur;
 		return retour;
 	}
 	
