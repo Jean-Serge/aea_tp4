@@ -21,7 +21,7 @@ public class MSTPrim {
 		List<Sommet> vus = new ArrayList<Sommet>();
 		AbstractGraphe g_retour = new Graphe();
 		vus.add(g.getSommets().get(0));
-		
+		g_retour.ajoutSommet(g.getSommets().get(0));
 
 		Arete tmp = null;
 		boolean origineVue = false;
@@ -49,19 +49,19 @@ public class MSTPrim {
 				}
 			}
 			
-			// On vérifie que l'Arete doit être ajoutée
-			if(null == tmp){
-				System.out.println("null == tmp");
+			// On vérifie qu'une arete doit être ajoutée
+			if(null == tmp)
 				break;
-			}
-
+			
 			// On marque le nouveau sommet et on l'ajoute au graphe 
 			if(vus.contains(tmp.getOrigine())){
 				vus.add(tmp.getArrivee());
 				g_retour.getSommets().add(tmp.getArrivee());
+				System.out.println(tmp.getArrivee());
 			}else{
 				vus.add(tmp.getOrigine());
 				g_retour.getSommets().add(tmp.getOrigine());
+				System.out.println(tmp.getOrigine());
 			}
 			
 			// On ajoute l'arete au graphe
