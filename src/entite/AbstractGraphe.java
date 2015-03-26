@@ -33,6 +33,11 @@ public abstract class AbstractGraphe {
 	//	Accesseurs
 	// 	=========================================
 	
+	/**
+	 * Retour une version textuelle du graphe.
+	 * Indique son nombre d'arètes et de sommets puis liste
+	 * les différentes arètes du graphe et les affiche.
+	 */
 	public String toString(){
 		String retour = "";
 		
@@ -63,6 +68,12 @@ public abstract class AbstractGraphe {
 		this.aretes.add(a);
 	}
 	
+	/**
+	 * Calcule le poids total d'un graphe.
+	 * i.e : la somme du poids de chacune des arètes du graphe
+	 * 
+	 * @return le poids total du graphe courant
+	 */
 	public int SommePoids() {
 		int res = 0;
 		
