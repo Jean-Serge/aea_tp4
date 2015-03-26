@@ -53,18 +53,19 @@ public class GrapheAleatoire extends AbstractGraphe {
 		MyRandom rand = new MyRandom();
 		int cptAretesCrees = 0;
 		Arete areteACreer = null;
-		int debut, fin;
+		int debut, fin, poids;
 		boolean egal;
 
 		while (cptAretesCrees < this.nAretes) {
 			debut = rand.nextPositive() % this.nSommets;
 			fin = rand.nextPositive() % this.nSommets;
+			poids = rand.nextPositive() % Arete.MAX_VALUE ;
 			// Pas d'arête d'un sommet vers lui-même
 			if (debut == fin)
 				continue;
 
 			areteACreer = new Arete(this.sommets.get(debut),
-					this.sommets.get(fin));
+					this.sommets.get(fin), poids);
 			// On vérifie que l'arête en question n'existe pas déjà
 			egal = false;
 			for (Arete a : this.aretes) {
