@@ -85,7 +85,6 @@ Au final, nous allons construire incrémentalement un MST du graphe d'origine.
 
 TODO :
 ======
-+ Implémentation algorithme de Prim
 + Test classe Graphe 
 + Test algo de Prim
-+ Faire l'exo 2 du TP ?
++ Faire l'exo 2 du TP
