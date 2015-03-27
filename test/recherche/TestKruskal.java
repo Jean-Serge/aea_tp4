@@ -1,3 +1,4 @@
+package recherche;
 
 import static org.junit.Assert.*;
 
@@ -96,7 +97,7 @@ public class TestKruskal {
 		
 		assertEquals(59,g.SommePoids());
 		
-		Graphe result = k.executeKruskal();
+		Graphe result = (Graphe) k.executeKruskal();
 		
 		assertEquals(29,result.SommePoids());
 	}
