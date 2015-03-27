@@ -2,14 +2,9 @@ package recherche;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Collections;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import utils.AreteComparator;
-
-import entite.AbstractGraphe;
 import entite.Arete;
 import entite.Graphe;
 import entite.Sommet;
