@@ -6,7 +6,6 @@ import java.util.List;
 import recherche.Kruskal;
 import entite.Arete;
 import entite.Graphe;
-import entite.GrapheAleatoire;
 import entite.Sommet;
 
 public class Exercice1 {
@@ -91,10 +90,9 @@ public class Exercice1 {
 		liste.add(new Arete(Galerie,Petit_Amphi,4));
 		liste.add(new Arete(Galerie,s69,2));
 		
-		Kruskal k = new Kruskal(new GrapheAleatoire(4,4));
 		Graphe g = new Graphe(liste);
 		
-		k = new Kruskal(g);
+		Kruskal k = new Kruskal(g);
 		Graphe res = k.executeKruskal();
 		
 		// RESULTAT :
