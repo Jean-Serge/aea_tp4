@@ -9,6 +9,10 @@ import entite.Graphe;
 import entite.GrapheAleatoire;
 import entite.Sommet;
 
+/**
+ * Cette classe résout l'exercice 1 du TP 2
+ * 
+ */
 public class Exercice1 {
 
 	public static void main(String[] args){
@@ -93,7 +97,7 @@ public class Exercice1 {
 		
 		Kruskal k = new Kruskal(new GrapheAleatoire(4,4));
 		Graphe g = new Graphe(liste);
-		
+			
 		k = new Kruskal(g);
 		Graphe res = k.executeKruskal();
 		
