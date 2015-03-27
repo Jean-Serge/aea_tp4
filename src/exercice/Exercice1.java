@@ -11,7 +11,7 @@ import entite.Sommet;
 
 public class Exercice1 {
 
-	public static void main(String[] argvs){
+	public static void main(String[] args){
 		
 		// MODELISATION DES SALLES :
 		
@@ -92,7 +92,7 @@ public class Exercice1 {
 		liste.add(new Arete(Galerie,s69,2));
 		
 		Kruskal k = new Kruskal(new GrapheAleatoire(4,4));
-		Graphe g = k.enGraphe(liste);
+		Graphe g = new Graphe(liste);
 		
 		k = new Kruskal(g);
 		Graphe res = k.executeKruskal();
