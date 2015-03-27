@@ -92,16 +92,6 @@ public class TestKruskal {
 	}
 	
 	@Test
-	public void test_enGraphe() {
-		
-		Graphe nouv = k.enGraphe(g.getAretes());
-		
-		assertEquals(g.getSommets().size(),nouv.getSommets().size());
-		assertEquals(g.getAretes().size(),nouv.getAretes().size());
-		
-	}
-	
-	@Test
 	public void test_Kruskal() {
 		
 		assertEquals(59,g.SommePoids());

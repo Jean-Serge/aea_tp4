@@ -52,31 +52,7 @@ public class Kruskal {
 			
 		}
 		// On retourne l'ensemble des arêtes selectionnées que l'on transforme en nouveau graphe
-		return this.enGraphe(this.ensemble_des_aretes);		
-	}
-
-	/**
-	 * Créé un graphe depuis une liste d'arêtes
-	 * @param ensemble_des_aretes les arêtes contenues dans le graphe finale
-	 * @return le graphe créé
-	 */
-	public Graphe enGraphe(List<Arete> ensemble_des_aretes) {
-		Graphe g = new Graphe();
-		
-		// Pour chaque arête de la liste on construit le nouveau graphe
-		for (Arete a : ensemble_des_aretes) {
-			// Si l'origine d'une des arêtes est déja présente, inutile de la réajouter
-			if (!g.getSommets().contains(a.getOrigine()))
-				g.ajoutSommet(a.getOrigine());
-			// Si l'arrivée d'une des arêtes est déja présente, inutile de la réajouter
-			if (!g.getSommets().contains(a.getArrivee()))
-				g.ajoutSommet(a.getArrivee());
-			// Ajout de l'arête
-			g.ajoutArete(a);
-		}
-		
-		return g;
-	
+		return new Graphe(this.ensemble_des_aretes);		
 	}
 	
 	/**
