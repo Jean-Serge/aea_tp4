@@ -1,7 +1,10 @@
 package recherche;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import utils.AreteComparator;
 
 import entite.AbstractGraphe;
 import entite.Arete;
@@ -19,6 +22,7 @@ public class Prim {
 		this.g = g;
 		g_retour = new Graphe();
 		vus = new ArrayList<Sommet>();
+		Collections.sort(g.getAretes(), new AreteComparator());
 	}
 
 	/**
@@ -68,8 +72,6 @@ public class Prim {
 		boolean origineVue;
 		boolean arriveeVue;
 
-		Arete retour = null;
-
 		for (Arete a : g.getAretes()) {
 			origineVue = vus.contains(a.getOrigine());
 			arriveeVue = vus.contains(a.getArrivee());
@@ -77,16 +79,11 @@ public class Prim {
 			// On cherche l'arete de poids minimale dont seul l'un des sommets
 			// est marqué.
 			if (origineVue ^ arriveeVue) {
-				if (null == retour)
-					retour = a;
-
-				// On cherche l'arète de poids minimal
-				if (a.getValeur() < retour.getValeur())
-					retour = a;
+				return a;
 			}
 		}
 
-		return retour;
+		return null;
 	}
 
 }

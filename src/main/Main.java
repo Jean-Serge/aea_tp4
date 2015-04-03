@@ -13,13 +13,13 @@ public class Main {
 	public static void main(String[] args) {
 		/*
 		 * Résultat rencontrés :
-		 * 	- 	(1000,   1)	==> 	Prim 	:	 1566ms		Kruskal	:	 11319ms
-		 * 	-	(1000, 100)	==>		Prim	:	78102ms		Kruskal	:	303751ms
+		 * 	- 	(1000, 1.0)	==> 	Prim 	: 	  254ms 	Kruskal	:	 
+		 * 	-	(5000, 1.0)	==>		Prim	:	18397ms		Kruskal	:	
 		 */
 		long deb, fin;
 		
 		deb = System.currentTimeMillis();
-		AbstractGraphe g = new GrapheAleatoire(5000, (float)1);
+		AbstractGraphe g = new GrapheAleatoire(10, (float)1);
 		fin = System.currentTimeMillis() - deb;
 		
 		System.out.println("La création du graphe a pris " + fin + " ms.");
