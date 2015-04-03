@@ -46,9 +46,7 @@ public class Kruskal {
 			Arete a = this.les_aretes.get(i);
 			
 			// Si a U ensemble_des_aretes alors on ajoute dans l'ensemble l'arête a
-			if (!this.estcycliqueAvec(a,this.ensemble_des_aretes)) {
-				this.ensemble_des_aretes.add(a);
-			}
+			this.addSommetsSiAcyclique(a);
 			
 		}
 		// On retourne l'ensemble des arêtes selectionnées que l'on transforme en nouveau graphe
@@ -59,48 +57,12 @@ public class Kruskal {
 	 * Teste si un ensemble d'arêtes formant un graphe non cyclique auquel on rajoute
 	 * une nouvelle arête devient cyclique.
 	 * @param arete l'arête que l'on rajoute
-	 * @param ensemble l'ensemble des arêtes formant un graphe non cyclique
 	 * @return true|false
 	 */
-	public boolean estcycliqueAvec(Arete arete,List<Arete> ensemble) {
-
-		List<Arete> dejaPlace = new ArrayList<Arete>();
-		List<Sommet> dejaVu = new ArrayList<Sommet>();
-		
-		// On ajoute dans dejaVu l'origine et l'arrivée de "arete"
-		dejaVu.add(arete.getOrigine());
-		dejaVu.add(arete.getArrivee());
-		
-		int memoire;
-		
-		// Tant qu'on a pas de réponse on continu
-		while (true) {
-			// memoire = la taille des arêtes déja placées
-			memoire = dejaPlace.size();
+	public void addSommetsSiAcyclique(Arete a) {
+		if (this.ensemble_des_aretes.size() == 0)
 			
-			// On parcours l'ensemble des arêtes
-			for (Arete a : ensemble) {
-				// Si on tombe sur une arête non placée alors on essaye de la mettre dans le nouvel ensemble :			
-				if (!dejaPlace.contains(a)) {
-					// Si l'origine de cette arête est deja vue mais pas l'arrivée alors on l'ajoute
-					if (dejaVu.contains(a.getOrigine()) && !dejaVu.contains(a.getArrivee())) {
-						dejaVu.add(a.getArrivee());
-						dejaPlace.add(a);
-					}
-					// Si l'arrivée de cette arête est deja vue mais pas l'origine alors on l'ajoute
-					else if (dejaVu.contains(a.getArrivee()) && !dejaVu.contains(a.getOrigine())) {
-						dejaVu.add(a.getOrigine());
-						dejaPlace.add(a);
-					}
-					// Si l'arête que l'on souhaite placée a ses sommets dejaVu alors on a trouvé un chemin cyclique
-					else if (dejaVu.contains(a.getArrivee()) && dejaVu.contains(a.getOrigine()))
-						return true;
-				}
-			}
-			// Si memoire ne varie pas alors c'est qu'on en a fini et que le graphe n'est pas cyclique
-			if (memoire == dejaPlace.size())
-				return false;
-		}	
+		
 	}
 	
 }
