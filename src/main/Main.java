@@ -13,13 +13,17 @@ public class Main {
 	public static void main(String[] args) {
 		/*
 		 * Résultat rencontrés :
-		 * 	- (1000, 5000) 	-> 	Kruskal : 7618 	ms	Prim : 1075 ms 
-		 * 	- (2000, 10000) -> 	Kruskal : 60247	ms	Prim : 7848 ms
-		 * 	- (1000, 999) 	-> 	Kruskal : 948 	ms	Prim : 131	ms
+		 * 	- 	(1000,   1)	==> 	Prim 	:	 1566ms		Kruskal	:	 11319ms
+		 * 	-	(1000, 100)	==>		Prim	:	78102ms		Kruskal	:	303751ms
 		 */
-		AbstractGraphe g = new GrapheAleatoire(1000, 999);
-		System.out.println("Nous travaillons avec un graphe généré aléatoirement.\nCelui-ci comport 1000 sommets pour 4750 arètes.");
 		long deb, fin;
+		
+		deb = System.currentTimeMillis();
+		AbstractGraphe g = new GrapheAleatoire(1000, (float)1);
+		fin = System.currentTimeMillis() - deb;
+		
+		System.out.println("La création du graphe a pris " + fin + " ms.");
+		
 		
 		deb = System.currentTimeMillis();
 		new Prim(g).rechercheMST();
