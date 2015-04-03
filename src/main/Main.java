@@ -19,11 +19,10 @@ public class Main {
 		long deb, fin;
 		
 		deb = System.currentTimeMillis();
-		AbstractGraphe g = new GrapheAleatoire(1000, (float)1);
+		AbstractGraphe g = new GrapheAleatoire(5000, (float)1);
 		fin = System.currentTimeMillis() - deb;
 		
 		System.out.println("La création du graphe a pris " + fin + " ms.");
-		
 		
 		deb = System.currentTimeMillis();
 		new Prim(g).rechercheMST();
