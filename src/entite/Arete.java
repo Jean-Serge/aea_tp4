@@ -11,7 +11,7 @@ package entite;
 public class Arete {
 
 	// Poids Maximal d'une Arète
-	public static final int MAX_VALUE = 101;
+	public static final int MAX_VALUE = 100;
 	
 	private Sommet origine;
 	private Sommet arrivee;

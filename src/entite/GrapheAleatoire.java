@@ -58,7 +58,7 @@ public class GrapheAleatoire extends AbstractGraphe {
 		for (int i = 0 ; i < this.nSommets ; i++) {
 			for (int j = i+1 ; j < this.nSommets ; j++) {
 				if (rand.nextFloat() <= p) {
-					poids = rand.nextPositive() % Arete.MAX_VALUE;
+					poids = (rand.nextPositive() % Arete.MAX_VALUE) + 1;
 					areteACreer = new Arete(this.getSommets().get(i), this.getSommets().get(j), poids);
 
 					this.aretes.add(areteACreer);
