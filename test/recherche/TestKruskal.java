@@ -2,9 +2,6 @@ package recherche;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -68,28 +65,6 @@ public class TestKruskal {
 		g.ajoutArete(a12);
 		
 		k = new Kruskal(g);
-	}
-	
-	@Test
-	public void test_estCyclique() {
-			
-		List<Arete> ensemble = new ArrayList<Arete>();
-		
-		ensemble.add(a1);
-		
-		assertFalse(k.estcycliqueAvec(a2, ensemble));
-		
-		ensemble.add(a5);
-		
-		assertFalse(k.estcycliqueAvec(a11, ensemble));
-		
-		ensemble.add(a4);
-		
-		assertFalse(k.estcycliqueAvec(a3, ensemble));
-		
-		ensemble.add(a3);
-		
-		assertTrue(k.estcycliqueAvec(a2, ensemble));
 	}
 	
 	@Test
