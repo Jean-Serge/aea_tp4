@@ -82,9 +82,11 @@ Au final, nous allons construire incrémentalement un MST du graphe d'origine.
 
 + On retourne le graphe construit
 
+Performances :
+==============
+Voir le main pour consulter les traces d'execution.
+On peut en déduire que :
++ en moyenne Prim est plus performant que Kruskal.
++ plus il y a d'arêtes et plus l'écart entre les temps d'execution de Prim et Kruskal se creuse.
++ Kruskal est plus performant dans les graphes ayant peu d'arêtes (pour un nombre de sommets < 1000).
 
-TODO :
-======
-+ Test classe Graphe 
-+ Test algo de Prim
-+ Faire l'exo 2 du TP
